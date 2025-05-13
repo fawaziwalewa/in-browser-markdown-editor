@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - In-browser Markdown Editor Solution
 
-## Getting Started
+This is my solution to the [In-browser Markdown Editor challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/inbrowser-markdown-editor-r16TrrQX9). The goal of this challenge was to create a feature-rich markdown editor with real-time preview and local persistence.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Frontend Mentor - In-browser Markdown Editor Solution](#frontend-mentor---in-browser-markdown-editor-solution)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The Challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [My Process](#my-process)
+    - [Built With](#built-with)
+    - [What I Learned](#what-i-learned)
+    - [Continued Development](#continued-development)
+    - [Useful Resources](#useful-resources)
+  - [Author](#author)
+
+## Overview
+
+### The Challenge
+
+Users should be able to:
+
+- Create, read, update, and delete markdown documents
+- Name and save documents to be accessed later
+- Edit markdown and see the formatted preview instantly
+- View a full-page preview of formatted markdown
+- Enjoy responsive layouts optimized for all screen sizes
+- Experience smooth hover states on interactive elements
+- **Bonus**: Store markdown data in `localStorage` to persist across refreshes
+- **Bonus**: Optionally build as a full-stack app (not covered here)
+
+### Screenshot
+
+![App Screenshot](./preview.png)
+
+## Links
+
+- **Solution URL**: [View solution on Frontend Mentor](https://www.frontendmentor.io/solutions/inbrowser-markdown-editor-react-tailwind)
+- **Live Site URL**: [View live site](https://in-browser-markdown-editor-tau.vercel.app/)
+
+## My Process
+
+### Built With
+
+- Semantic HTML5
+- Tailwind CSS
+- Flexbox
+- React
+- Next.js
+- `localStorage` for persistence
+- Markdown rendering via [`react-markdown`](https://github.com/remarkjs/react-markdown)
+
+### What I Learned
+
+One of the most useful things I learned during this challenge was how to synchronize `contentEditable` fields with React state for a seamless editing experience, and how to safely render markdown with `react-markdown`. I also got to fine-tune my knowledge of `localStorage` and conditional theming.
+
+Example: Setting default dark mode state properly from `localStorage` while defaulting to `true` if not set.
+
+```js
+const [isDarkMode, setIsDarkMode] = useState(() => {
+  const stored = localStorage.getItem('darkMode');
+  return stored !== null ? stored === 'true' : true;
+});
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Continued Development
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+In future updates, I’d like to:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Add document versioning or autosave
+- Sync markdown files with cloud storage (e.g. Firebase)
+- Improve accessibility and keyboard navigation
+- Add export options (PDF, .md download)
 
-## Learn More
+### Useful Resources
 
-To learn more about Next.js, take a look at the following resources:
+- [Markdown Guide](https://www.markdownguide.org/) - Always a great resource when working with markdown.
+- [React Markdown Docs](https://github.com/remarkjs/react-markdown) - Helped a lot with customizing the markdown rendering.
+- [TailwindCSS Documentation](https://tailwindcss.com/docs) - My go-to for quick layout and styling help.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Website – [iwaola.me](https://iwaola.me)
+- Frontend Mentor – [@fawaziwalewa](https://www.frontendmentor.io/profile/fawaziwalewa)
+- Twitter – [@IwalewaFawaz](https://twitter.com/IwalewaFawaz)
