@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${robotoSlab.className} flex h-screen group antialiased dark:bg-neutral-1000`}
+        className={`${robotoSlab.className} flex min-h-screen group antialiased dark:bg-neutral-1000`}
       >
         {children}
       </body>
